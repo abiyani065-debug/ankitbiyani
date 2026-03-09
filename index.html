@@ -315,20 +315,21 @@ b.style.width=b.getAttribute("data")+"%";
 <!-- FIREBASE BACKEND -->
 
 <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAfsanssG9hD12PkoQc5aEU_QeC72YpBts",
+    authDomain: "ankit-portfolio-3b7b0.firebaseapp.com",
+    projectId: "ankit-portfolio-3b7b0",
+    storageBucket: "ankit-portfolio-3b7b0.firebasestorage.app",
+    messagingSenderId: "399781094126",
+    appId: "1:399781094126:web:2efab8f950a6f4511409ff"
+  };
 
-const firebaseConfig = {
-
-apiKey: "YOUR_API_KEY",
-authDomain: "YOUR_PROJECT.firebaseapp.com",
-projectId: "YOUR_PROJECT",
-storageBucket: "YOUR_PROJECT.appspot.com",
-messagingSenderId: "XXXX",
-appId: "XXXX"
-
-};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

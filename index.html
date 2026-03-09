@@ -315,25 +315,21 @@ b.style.width=b.getAttribute("data")+"%";
 <!-- FIREBASE BACKEND -->
 
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAfsanssG9hD12PkoQc5aEU_QeC72YpBts",
-    authDomain: "ankit-portfolio-3b7b0.firebaseapp.com",
-    projectId: "ankit-portfolio-3b7b0",
-    storageBucket: "ankit-portfolio-3b7b0.firebasestorage.app",
-    messagingSenderId: "399781094126",
-    appId: "1:399781094126:web:2efab8f950a6f4511409ff"
-  };
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAfsanssG9hD12PkoQc5aEU_QeC72YpBts",
+  authDomain: "ankit-portfolio-3b7b0.firebaseapp.com",
+  projectId: "ankit-portfolio-3b7b0",
+  storageBucket: "ankit-portfolio-3b7b0.firebasestorage.app",
+  messagingSenderId: "399781094126",
+  appId: "1:399781094126:web:2efab8f950a6f4511409ff"
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 
 document.getElementById("feedbackForm").addEventListener("submit", async (e)=>{
 
@@ -363,12 +359,10 @@ document.getElementById("feedbackForm").reset();
 catch(err){
 
 status.innerText="❌ Error submitting feedback";
+console.error(err);
 
 }
 
 });
 
 </script>
-
-</body>
-</html>
